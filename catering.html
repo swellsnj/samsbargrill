@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catering & Events | Sam's Bar & Grill</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --gold: #e9be46; --orange: #f7931d; --dark: #414142; --darker: #2c2c2d; --darkest: #1a1a1b; --light: #f5f0e8; --muted: rgba(255,255,255,0.6); }
+  body { background: var(--darkest); color: var(--light); font-family: 'Georgia', serif; }
+  nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(26,26,27,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(233,190,70,0.2); display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 64px; }
+  .nav-logo img { height: 40px; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-family: 'Arial', sans-serif; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .page-hero { padding: 140px 40px 80px; max-width: 1100px; margin: 0 auto; }
+  .page-eyebrow { font-family: 'Arial', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+  .page-hero h1 { font-size: clamp(36px, 6vw, 72px); font-weight: normal; color: #fff; line-height: 1.1; margin-bottom: 24px; }
+  .page-hero p { font-size: 18px; color: var(--muted); line-height: 1.8; max-width: 600px; font-style: italic; }
+  .divider { border: none; border-top: 1px solid rgba(233,190,70,0.2); margin: 0; }
+  .features { background: var(--darker); padding: 80px 40px; }
+  .features-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+  .feature { border-left: 2px solid var(--gold); padding-left: 24px; }
+  .feature h3 { font-size: 20px; color: #fff; font-weight: normal; margin-bottom: 8px; }
+  .feature p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+  .form-section { padding: 80px 40px; max-width: 800px; margin: 0 auto; }
+  .form-label { font-family: 'Arial', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .form-section h2 { font-size: clamp(28px, 4vw, 42px); font-weight: normal; color: #fff; margin-bottom: 16px; }
+  .form-section > p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 40px; }
+  .form-embed { border: 1px solid rgba(233,190,70,0.2); border-radius: 2px; overflow: hidden; background: var(--darker); }
+  .form-embed iframe { width: 100%; min-height: 700px; border: none; display: block; }
+  footer { background: var(--darkest); border-top: 1px solid rgba(233,190,70,0.15); padding: 40px; text-align: center; }
+  .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; }
+  .footer-links a { font-family: 'Arial', sans-serif; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy { font-family: 'Arial', sans-serif; font-size: 11px; color: rgba(255,255,255,0.25); }
+  @media (max-width: 700px) { nav { padding: 0 20px; } .nav-links { display: none; } .page-hero, .form-section, .features { padding-left: 24px; padding-right: 24px; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo"><img src="sams-logo.png" alt="Sam's Bar & Grill"></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="order.html">Order</a></li>
+    <li><a href="catering.html">Catering</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="jobs.html">Jobs</a></li>
+  </ul>
+</nav>
+<div class="page-hero">
+  <div class="page-eyebrow">Private Events & Catering</div>
+  <h1>Let Sam's bring<br>the party</h1>
+  <p>From intimate dinners to full-scale events, Sam's Bar & Grill delivers the food, the drinks, and the good times. Serving Ringwood and all of Passaic County.</p>
+</div>
+<hr class="divider">
+<div class="features">
+  <div class="features-inner">
+    <div class="feature">
+      <h3>Full-Service Catering</h3>
+      <p>From setup to service, we handle everything. Small gatherings to large events — we've got you covered.</p>
+    </div>
+    <div class="feature">
+      <h3>Bar Service</h3>
+      <p>Custom cocktail menus, local drafts, and a full bar experience your guests won't forget.</p>
+    </div>
+    <div class="feature">
+      <h3>Any Occasion</h3>
+      <p>Birthdays, graduations, corporate events, holiday parties — no event too big or too small.</p>
+    </div>
+  </div>
+</div>
+<div class="form-section">
+  <div class="form-label">Get in Touch</div>
+  <h2>Ready to plan<br>your event?</h2>
+  <p>Fill out the inquiry form below and we'll be in touch within 24 hours to start planning something great.</p>
+  <div class="form-embed">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf_CATERING_FORM_ID/viewform?embedded=true" loading="lazy">Loading form...</iframe>
+  </div>
+</div>
+<footer>
+  <div class="footer-links">
+    <a href="https://www.facebook.com/sambargrill" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com/sams_barandgrill_" target="_blank">Instagram</a>
+    <a href="mailto:info@samsbargrill.com">Email Us</a>
+  </div>
+  <div class="footer-copy">&copy; Sam's Bar & Grill &middot; Ringwood, NJ</div>
+</footer>
+</body>
+</html>

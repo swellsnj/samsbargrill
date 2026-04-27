@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sam's Bar & Grill | Ringwood, NJ</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --gold: #e9be46;
+    --orange: #f7931d;
+    --dark: #414142;
+    --darker: #2c2c2d;
+    --darkest: #1a1a1b;
+    --light: #f5f0e8;
+    --muted: rgba(255,255,255,0.6);
+  }
+  body { background: var(--darkest); color: var(--light); font-family: 'Georgia', serif; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(26,26,27,0.95); backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(233,190,70,0.2);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 64px;
+  }
+  .nav-logo img { height: 40px; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    color: var(--muted); text-decoration: none; font-family: 'Arial', sans-serif;
+    font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; text-align: center;
+    padding: 100px 40px 60px;
+    background: linear-gradient(180deg, var(--darkest) 0%, var(--darker) 100%);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(233,190,70,0.05) 0%, transparent 70%);
+  }
+  .hero-eyebrow {
+    font-family: 'Arial', sans-serif; font-size: 11px; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: clamp(48px, 8vw, 96px); font-weight: normal;
+    color: #fff; line-height: 1.05; margin-bottom: 24px;
+    text-shadow: 0 2px 40px rgba(0,0,0,0.5);
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero-sub {
+    font-size: 18px; color: var(--muted); max-width: 520px;
+    line-height: 1.7; margin-bottom: 40px; font-style: italic;
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .btn-primary {
+    background: var(--orange); color: #fff; padding: 14px 32px;
+    font-family: 'Arial', sans-serif; font-size: 13px; letter-spacing: 1.5px;
+    text-transform: uppercase; text-decoration: none; border-radius: 2px;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold); color: var(--darkest); }
+  .btn-outline {
+    border: 1px solid var(--gold); color: var(--gold); padding: 14px 32px;
+    font-family: 'Arial', sans-serif; font-size: 13px; letter-spacing: 1.5px;
+    text-transform: uppercase; text-decoration: none; border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { background: var(--gold); color: var(--darkest); }
+  .hero-ticker {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: var(--gold); color: var(--darkest); padding: 10px 0;
+    font-family: 'Arial', sans-serif; font-size: 11px; letter-spacing: 2px;
+    text-transform: uppercase; text-align: center;
+  }
+
+  /* INFO BAR */
+  .info-bar {
+    background: var(--darker); border-bottom: 1px solid rgba(233,190,70,0.15);
+    display: grid; grid-template-columns: repeat(3, 1fr);
+  }
+  .info-cell {
+    padding: 28px 32px; border-right: 1px solid rgba(233,190,70,0.1);
+    text-align: center;
+  }
+  .info-cell:last-child { border-right: none; }
+  .info-label {
+    font-family: 'Arial', sans-serif; font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+  }
+  .info-value { font-size: 15px; color: var(--light); line-height: 1.6; }
+  .info-value a { color: var(--gold); text-decoration: none; }
+
+  /* ABOUT */
+  .section { padding: 80px 40px; max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-family: 'Arial', sans-serif; font-size: 10px; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+  }
+  .section h2 {
+    font-size: clamp(28px, 4vw, 42px); font-weight: normal;
+    color: #fff; margin-bottom: 24px; line-height: 1.2;
+  }
+  .section p { font-size: 16px; color: var(--muted); line-height: 1.8; max-width: 680px; }
+
+  /* HOURS */
+  .hours-section {
+    background: var(--darker); padding: 80px 40px;
+    border-top: 1px solid rgba(233,190,70,0.1);
+    border-bottom: 1px solid rgba(233,190,70,0.1);
+  }
+  .hours-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .hours-grid { display: flex; flex-direction: column; gap: 0; }
+  .hour-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-family: 'Arial', sans-serif; font-size: 14px;
+  }
+  .hour-day { color: var(--muted); letter-spacing: 0.5px; }
+  .hour-time { color: var(--gold); font-weight: bold; }
+
+  /* CARDS */
+  .cards-section { padding: 80px 40px; background: var(--darkest); }
+  .cards-inner { max-width: 1100px; margin: 0 auto; }
+  .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px; }
+  .card {
+    background: var(--darker); border: 1px solid rgba(233,190,70,0.15);
+    padding: 36px; border-radius: 2px; transition: border-color 0.2s;
+  }
+  .card:hover { border-color: var(--gold); }
+  .card-label {
+    font-family: 'Arial', sans-serif; font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 12px;
+  }
+  .card h3 { font-size: 22px; color: #fff; margin-bottom: 12px; font-weight: normal; }
+  .card p { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
+  .card a {
+    font-family: 'Arial', sans-serif; font-size: 12px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--gold); text-decoration: none;
+  }
+  .card a:hover { color: var(--orange); }
+
+  /* FOOTER */
+  footer {
+    background: var(--darkest); border-top: 1px solid rgba(233,190,70,0.15);
+    padding: 40px; text-align: center;
+  }
+  .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; }
+  .footer-links a {
+    font-family: 'Arial', sans-serif; font-size: 12px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--muted); text-decoration: none;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy { font-family: 'Arial', sans-serif; font-size: 11px; color: rgba(255,255,255,0.25); }
+
+  @media (max-width: 700px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .info-bar { grid-template-columns: 1fr; }
+    .info-cell { border-right: none; border-bottom: 1px solid rgba(233,190,70,0.1); }
+    .hours-inner { grid-template-columns: 1fr; }
+    .section, .cards-section, .hours-section { padding: 60px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <img src="sams-logo.png" alt="Sam's Bar & Grill">
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="order.html">Order</a></li>
+    <li><a href="catering.html">Catering</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="jobs.html">Jobs</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">Ringwood, New Jersey</div>
+  <h1>Sam's Bar<br><span>&</span> Grill</h1>
+  <p class="hero-sub">Your neighborhood bar. Cold drinks, great food, good people.</p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="https://order.toasttab.com/online/samsbargrill" target="_blank">Order Online</a>
+    <a class="btn-outline" href="catering.html">Catering Inquiry</a>
+  </div>
+  <div class="hero-ticker">15 Greenwood Lake Turnpike &nbsp;·&nbsp; Ringwood, NJ 07456 &nbsp;·&nbsp; 973-520-SAMS &nbsp;·&nbsp; Open Today</div>
+</section>
+
+<div class="info-bar">
+  <div class="info-cell">
+    <div class="info-label">Address</div>
+    <div class="info-value">15 Greenwood Lake Tpke<br>Ringwood, NJ 07456</div>
+  </div>
+  <div class="info-cell">
+    <div class="info-label">Phone</div>
+    <div class="info-value"><a href="tel:9735207267">973-520-SAMS</a></div>
+  </div>
+  <div class="info-cell">
+    <div class="info-label">Order Online</div>
+    <div class="info-value"><a href="https://order.toasttab.com/online/samsbargrill" target="_blank">Toast &rarr;</a></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">About Us</div>
+  <h2>A cornerstone of<br>the Ringwood community</h2>
+  <p>Sam's Bar & Grill has been a cornerstone of the Ringwood community — a neighborhood spot where the food is always fresh, the drinks are cold, and everybody's welcome. Whether you're stopping in for lunch, catching the game, or staying late on a Friday, Sam's is your place.</p>
+</div>
+
+<div class="hours-section">
+  <div class="hours-inner">
+    <div>
+      <div class="section-label">Hours</div>
+      <h2>When we're<br>open</h2>
+    </div>
+    <div class="hours-grid">
+      <div class="hour-row"><span class="hour-day">Monday</span><span class="hour-time">4PM – 10PM</span></div>
+      <div class="hour-row"><span class="hour-day">Tuesday</span><span class="hour-time">12PM – 11PM</span></div>
+      <div class="hour-row"><span class="hour-day">Wednesday</span><span class="hour-time">12PM – 11PM</span></div>
+      <div class="hour-row"><span class="hour-day">Thursday</span><span class="hour-time">12PM – 12AM</span></div>
+      <div class="hour-row"><span class="hour-day">Friday</span><span class="hour-time">12PM – 2AM</span></div>
+      <div class="hour-row"><span class="hour-day">Saturday</span><span class="hour-time">10AM – 2AM</span></div>
+      <div class="hour-row"><span class="hour-day">Sunday</span><span class="hour-time">10AM – 10PM</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="cards-section">
+  <div class="cards-inner">
+    <div class="section-label">What We Do</div>
+    <h2>More than just a bar</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-label">Order Online</div>
+        <h3>Pickup & Delivery</h3>
+        <p>Order your favorites online for pickup or delivery through Toast. Burgers, wings, and everything in between.</p>
+        <a href="https://order.toasttab.com/online/samsbargrill" target="_blank">Order now &rarr;</a>
+      </div>
+      <div class="card">
+        <div class="card-label">Private Events</div>
+        <h3>Catering & Events</h3>
+        <p>Birthdays, corporate events, graduations — Sam's handles the food, the drinks, and the good times.</p>
+        <a href="catering.html">Make an inquiry &rarr;</a>
+      </div>
+      <div class="card">
+        <div class="card-label">Now Hiring</div>
+        <h3>Join the Team</h3>
+        <p>We're looking for servers, bartenders, barbacks, and bussers who bring good energy every shift.</p>
+        <a href="jobs.html">See open roles &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://www.facebook.com/sambargrill" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com/sams_barandgrill_" target="_blank">Instagram</a>
+    <a href="mailto:info@samsbargrill.com">Email Us</a>
+  </div>
+  <div class="footer-copy">&copy; Sam's Bar & Grill &middot; Ringwood, NJ</div>
+</footer>
+
+</body>
+</html>
