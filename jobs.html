@@ -30,6 +30,10 @@
   .form-label { font-family: 'Arial', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
   .form-section h2 { font-size: clamp(28px, 4vw, 42px); font-weight: normal; color: #fff; margin-bottom: 16px; }
   .form-section > p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 40px; }
+  .form-cta { text-align: center; padding: 60px 40px; border: 1px solid rgba(233,190,70,0.2); border-radius: 2px; background: var(--darker); }
+  .btn-form { display: inline-block; background: var(--orange); color: #fff; padding: 18px 48px; font-family: "Arial", sans-serif; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.2s; }
+  .btn-form:hover { background: var(--gold); color: var(--darkest); }
+  .form-note { margin-top: 16px; font-family: "Arial", sans-serif; font-size: 12px; color: rgba(255,255,255,0.3); letter-spacing: 0.5px; }
   .form-embed { border: 1px solid rgba(233,190,70,0.2); border-radius: 2px; overflow: hidden; background: var(--darker); }
   .form-embed iframe { width: 100%; min-height: 700px; border: none; display: block; }
   footer { background: var(--darkest); border-top: 1px solid rgba(233,190,70,0.15); padding: 40px; text-align: center; }
@@ -75,8 +79,9 @@
   <div class="form-label">Apply Now</div>
   <h2>Ready to join us?</h2>
   <p>Fill out the application below. One form covers both locations — we'll reach out once we've reviewed your application.</p>
-  <div class="form-embed">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScj_qX0GHUw0M2akj-0gej1sRZ-IYtJ8PkEtJHcct1UveBpgw/viewform?embedded=true" loading="lazy">Loading form...</iframe>
+  <div class="form-cta">
+    <a class="btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLScj_qX0GHUw0M2akj-0gej1sRZ-IYtJ8PkEtJHcct1UveBpgw/viewform?usp=header" target="_blank">Open Application Form &rarr;</a>
+    <p class="form-note">Opens in a new tab &middot; Takes about 5 minutes</p>
   </div>
 </div>
 <footer>
