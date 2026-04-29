@@ -25,6 +25,7 @@
     display: flex; align-items: center; justify-content: space-between;
     padding: 0 40px; height: 64px;
   }
+  .nav-logo a { display: inline-block; line-height: 0; }
   .nav-logo img { height: 40px; }
   .nav-links { display: flex; gap: 32px; list-style: none; }
   .nav-links a {
@@ -61,14 +62,14 @@
     line-height: 1.7; margin-bottom: 40px; font-style: italic;
   }
   .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
-  .btn-primary {
+  .btn-primary { cursor: pointer; pointer-events: all;
     background: var(--orange); color: #fff; padding: 14px 32px;
     font-family: 'Arial', sans-serif; font-size: 13px; letter-spacing: 1.5px;
     text-transform: uppercase; text-decoration: none; border-radius: 2px;
     transition: background 0.2s;
   }
   .btn-primary:hover { background: var(--gold); color: var(--darkest); }
-  .btn-outline {
+  .btn-outline { cursor: pointer; pointer-events: all;
     border: 1px solid var(--gold); color: var(--gold); padding: 14px 32px;
     font-family: 'Arial', sans-serif; font-size: 13px; letter-spacing: 1.5px;
     text-transform: uppercase; text-decoration: none; border-radius: 2px;
@@ -193,7 +194,7 @@
   <h1>Sam's Bar<br><span>&</span> Grill</h1>
   <p class="hero-sub">Your neighborhood bar. Cold drinks, great food, good people.</p>
   <div class="hero-actions">
-    <a class="btn-primary" href="https://order.toasttab.com/online/samsbargrill" target="_blank" rel="noopener noreferrer">Order Online</a>
+    <a class="btn-primary" href="https://www.toasttab.com/local/order/samsbargrill" target="_blank" rel="noopener noreferrer">Order Online</a>
     <a class="btn-outline" href="catering.html">Catering Inquiry</a>
   </div>
   <div class="hero-ticker">15 Greenwood Lake Turnpike &nbsp;·&nbsp; Ringwood, NJ 07456 &nbsp;·&nbsp; 973-520-SAMS &nbsp;·&nbsp; Open Today</div>
@@ -210,7 +211,7 @@
   </div>
   <div class="info-cell">
     <div class="info-label">Order Online</div>
-    <div class="info-value"><a href="https://order.toasttab.com/online/samsbargrill" target="_blank">Toast &rarr;</a></div>
+    <div class="info-value"><a href="https://www.toasttab.com/local/order/samsbargrill" target="_blank">Toast &rarr;</a></div>
   </div>
 </div>
 
@@ -247,7 +248,7 @@
         <div class="card-label">Order Online</div>
         <h3>Pickup & Delivery</h3>
         <p>Order your favorites online for pickup or delivery through Toast. Burgers, wings, and everything in between.</p>
-        <a href="https://order.toasttab.com/online/samsbargrill" target="_blank">Order now &rarr;</a>
+        <a href="https://www.toasttab.com/local/order/samsbargrill" target="_blank">Order now &rarr;</a>
       </div>
       <div class="card">
         <div class="card-label">Private Events</div>
